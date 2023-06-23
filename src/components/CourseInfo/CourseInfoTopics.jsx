@@ -51,6 +51,7 @@ const CourseInfoTopics = () => {
                     <CustomTableStyled data={content.tbody} columns={content.tcols} />
                   </TableWrapper>
               ) : null}
+              {content.dropdownheading ?(
               <Dropdown key={content.id}>
                   <DropdownButton
                     type="button"
@@ -69,6 +70,7 @@ const CourseInfoTopics = () => {
 
                   ): null}
                   </Dropdown>
+                  ) : null}
 
               
               </div>
