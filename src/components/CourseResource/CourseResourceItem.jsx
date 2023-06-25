@@ -34,12 +34,15 @@ const CourseResourceItem = ({ content: initialContent }) => {
   const [content, setContent] = useState(initialContent)
 
   const handleDownload = () => {
-    // window.open(content.file, '_blank', 'noopener,noreferrer')
-    const iframe = document.createElement('iframe')
-    iframe.src = content.file
-    iframe.style.display = 'none'
-    document.body.appendChild(iframe)
-    window.open(iframe.src, '_blank', 'noopener,noreferrer')
+    if (content.file.toLowerCase().endsWith('.pdf')) {
+      const downloadWindow = window.open('', '_blank')
+      downloadWindow.location.href = content.file
+    } else {
+      const link = document.createElement('a')
+      link.href = content.file
+      link.download = content.title
+      link.click()
+    }
   }
 
   const handleEdit = async (payload) => {
