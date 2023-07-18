@@ -119,7 +119,9 @@ const DropdownContent = styled.p`
   padding: 1rem;
   color: ${({ theme }) => theme.textColor};
   border-top: 1px solid ${({ theme }) => theme.borderColor};
-  font-family: 'Source Sans Pro'
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-align: justify;
 `
 const TableWrapper = styled.div`
   margin-top: 1rem;
